@@ -6,3 +6,4 @@
 ,{"name": "LNEXT", "shortName": "Next\nLayer", "title": "Switch to the next layer"}
 ,{"name": "LPREV", "shortName": "Prev\nLayer", "title": "Switch to the previous layer"}
 ,{"name": "EH_RSRV1", "shortName": "", "title": "Not using"}
+,{"name": "Alt Tab", "shortName": "ALT_TAB", "title": "Alt Tab Hold"}
