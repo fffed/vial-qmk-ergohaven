@@ -3,10 +3,10 @@
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         [_BASE] = LAYOUT( \
-         KC_ESC,   KC_Q,   KC_W,    KC_E,     KC_R,     KC_T,                                              KC_Y,   KC_U,    KC_I,     KC_O,   KC_P,    KC_BSPC,
-         QK_KB_0,  KC_A,   KC_S,    KC_D,     KC_F,     KC_G,                                              KC_H,   KC_J,    KC_K,     KC_L,   KC_SCLN, KC_BSLS,
-         KC_LSFT,  KC_Z,   KC_X,    KC_C,     KC_V,     KC_B,                                              KC_N,   KC_M,    KC_COMM,  KC_DOT, KC_QUOT, KC_RSFT,
-                   KC_GRV, KC_LGUI, KC_LCTL,  LOWER,    KC_SPC,                                            KC_ENT, RAISE,   KC_LALT,  KC_LBRC,  KC_RBRC
+         KC_ESC,    KC_Q,   KC_W,    KC_E,     KC_R,     KC_T,                                             KC_Y,   KC_U,    KC_I,     KC_O,   KC_P,    KC_BSPC,
+         QK_USER_0, KC_A,   KC_S,    KC_D,     KC_F,     KC_G,                                             KC_H,   KC_J,    KC_K,     KC_L,   KC_SCLN, KC_BSLS,
+         KC_LSFT,   KC_Z,   KC_X,    KC_C,     KC_V,     KC_B,                                             KC_N,   KC_M,    KC_COMM,  KC_DOT, KC_QUOT, KC_RSFT,
+                    KC_GRV, KC_LGUI, KC_LCTL,  LOWER,    KC_SPC,                                           KC_ENT, RAISE,   KC_LALT,  KC_LBRC,  KC_RBRC
         ),
 
         [_LOWER] = LAYOUT( \
@@ -34,7 +34,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     switch (keycode) {
-        case QK_KB_0: // Use QK_KB_0 directly instead of ALT_TAB
+        case QK_USER_0: // Use QK_USER_0 directly instead of ALT_TAB
+        // Use "Any" key with value 0x5F00
             if (record->event.pressed) {
                 // Key pressed: Hold ALT and tap TAB
                 register_code(KC_LALT);
